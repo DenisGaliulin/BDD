@@ -13,7 +13,6 @@ class MoneyTransferTest {
     private DashboardPage dashboardPage;
     private int firstCardBalanceBefore;
     private int secondCardBalanceBefore;
-    private int transferAmount = 1000;
 
     @BeforeEach
     void setUp() {
@@ -30,6 +29,8 @@ class MoneyTransferTest {
 
     @Test
     void shouldTransferMoneyBetweenOwnCards() {
+        int transferAmount = secondCardBalanceBefore / 2;
+
         var transferPage = dashboardPage.selectFirstCardForTransfer();
         transferPage.setAmount(transferAmount);
         transferPage.setFromCard(DataHelper.getSecondCardInfo().getNumber());
