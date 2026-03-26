@@ -44,7 +44,7 @@ class MoneyTransferTest {
 
     @Test
     void shouldNotTransferMoreThanBalance() {
-        int invalidAmount = secondCardBalanceBefore + 5000;
+        int invalidAmount = secondCardBalanceBefore + 1;
 
         var transferPage = dashboardPage.selectFirstCardForTransfer();
         transferPage.setAmount(invalidAmount);
